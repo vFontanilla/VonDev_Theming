@@ -1,0 +1,6 @@
+{
+    "intelephense.environment.includePaths": [
+        "C:/xampp/htdocs/wordpress/wp-admin",
+        "C:/xampp/htdocs/wordpress/wp-includes"
+    ]
+}

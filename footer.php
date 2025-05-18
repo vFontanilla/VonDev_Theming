@@ -2,11 +2,13 @@
 /**
  * Footer template.
  * 
- * @package VonDev Theme
+ * @package CustomTheme
  */
 
  ?>
 
 <footer>Footer</footer>
+
+<?php wp_footer(); ?>
 </body>
 </html>
