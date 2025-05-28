@@ -5,23 +5,29 @@
  * @package CustomTheme
  */
 
+use CUSTOMTHEME\Inc\CUSTOMTHEME;
+
+ // Define directory path constant
+if ( ! defined( 'CUSTOMTHEME_DIR_PATH' ) ) {
+	define( 'CUSTOMTHEME_DIR_PATH', untrailingslashit( get_template_directory() ) );
+} 
+
+if ( ! defined( 'CUSTOMTHEME_DIR_URI' ) ) {
+    define( 'CUSTOMTHEME_DIR_URI', untrailingslashit( get_template_directory_uri() ) );
+}
+
+// Require the autoloader
+require_once CUSTOMTHEME_DIR_PATH . '/inc/helpers/autoloader.php';
+
+function customtheme_get_theme_instance () {
+    \CUSTOMTHEME\Inc\CUSTOMTHEME::get_instance();
+}
+
+customtheme_get_theme_instance();
+
 function customtheme_enqueue_scripts() {
 
-    //Register Styles
-    wp_register_style( 'main-stylesheet', get_stylesheet_uri(), [], filemtime( get_template_directory() . '/style.css'), 'all' );
-    wp_register_style( 'bootstrap-css', get_template_directory_uri() . '/assets/src/library/css/bootstrap.min.css', [], false, 'all' );
-
-    //Register Scripts
-    wp_register_script( 'main-js', get_template_directory_uri() . '/assets/main.js', [], filemtime( get_template_directory() . '/assets/main.js'), true );
-    wp_register_script( 'bootstrap-js', get_template_directory_uri() . '/assets/src/library/js/bootstrap.min.js', [ 'jquery' ], false, true );
     
-    //Enqueue Styles
-    wp_enqueue_style( 'main-stylesheet' );
-    wp_enqueue_style( 'bootstrap-css' );
-
-    //Enqueue Scripts
-    wp_enqueue_script( 'main-js' );
-    wp_enqueue_script( 'bootstrap-js' );
 }
 add_action('wp_enqueue_scripts', 'customtheme_enqueue_scripts');
 ?>
