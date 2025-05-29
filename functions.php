@@ -24,11 +24,5 @@ function customtheme_get_theme_instance () {
 }
 
 customtheme_get_theme_instance();
-
-function customtheme_enqueue_scripts() {
-
-    
-}
-add_action('wp_enqueue_scripts', 'customtheme_enqueue_scripts');
 ?>
 
