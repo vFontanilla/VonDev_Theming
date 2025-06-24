@@ -1,5 +1,5 @@
-<?php 
-    /** 
+    <?php 
+    /*
      * Header template.
      * 
      * @package CustomTheme
