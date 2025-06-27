@@ -23,6 +23,12 @@ if (function_exists( 'wp_body_open' ) ) {
 }
 ?>
 
+<style>
+    .site-header {
+        background: #FFFFFF;
+    }
+</style>
+
 <div id="page" class="site bg-light shadow-sm">
     <header id="masthead" class="site-header" role="banner">
         <?php get_template_part( 'template-parts/header/nav' ) ?>
